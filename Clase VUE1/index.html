@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*#app img{
+            width: 100px;
+        }*/
+        #personajes{
+            width: 200px;
+            border: 1px solid gray;
+        }
+        img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Mensaje: {{msj}}</h1> <!--en doble llave es el vue-->
+        <h2>{{otroMensaje}}</h2>
+       <!-- <img v-bind:src="imagen1" v-bind:alt="desc1"> <!--quiero que el contenido del atributo source me lo tome desde mi objeto Vue, entonces le pongo la directiva v-bind
+        <img v-bind:src="imagen2" :alt="desc2"> con solo los dos : es un atajo-->
+        <!--<img v-for="elem in fotos" v-bind:src="elem" :alt="personajes">  para mostrar un arreglo de fotos "para cada elem en fotos -> mostra en src: elem"-->
+     <div id="personajes" v-for="elem in personajes">
+         <img v-bind:src="elem.image" :alt="elem.name" :title="elem.name">
+         <p>Name: {{elem.name}}</p>
+         <p>Species: {{elem.species}}</p>
+         <!--<img v-if="elem.species==='human'" v-bind:src="elem.image" :alt="elem.name" :title="elem.name">-->
+     </div>
+        <!--img v-for="elem in personajes" v-bind:src="elem.image" :alt="elem.name" :title="elem.name">  --><!--cuando paso el-->
+        
+
+    </div>
+    <div id="ej"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
